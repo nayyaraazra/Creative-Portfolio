@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nayyara Aqila Azra | Portfolio</title>
+<meta name="description" content="Portfolio of Nayyara Aqila Azra, Informatics student at Universitas Sebelas Maret: web, mobile, AI, and UX projects.">
+<meta name="theme-color" content="#0a0a0a">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="js/tailwind.config.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/background.js" defer></script>
+<script src="js/main.js" defer></script>
+</head>
+<body class="bg-dark text-gray-300 font-sans selection:bg-primary selection:text-white overflow-x-hidden">
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+  <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 rounded-full mix-blend-screen blur-[100px] opacity-30 animate-blob"></div>
+  <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen blur-[100px] opacity-30 animate-blob animation-delay-2000"></div>
+  <div class="absolute bottom-[-10%] left-[20%] w-96 h-96 bg-accent/20 rounded-full mix-blend-screen blur-[100px] opacity-30 animate-blob animation-delay-4000"></div>
+</div>
+
+<nav class="fixed w-full z-50 glass" id="navbar" aria-label="Main">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#home" class="text-2xl font-bold font-mono text-white tracking-tighter">NAYYA’s<span class="text-primary">.</span>PORTFOLIO</a>
+    <div class="hidden md:flex space-x-8 items-center">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Work</a>
+      <a href="#contact" class="px-5 py-2 rounded-full border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all text-sm font-medium">Let’s Talk</a>
+    </div>
+    <button class="md:hidden text-white" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"><i class="fas fa-bars text-xl"></i></button>
+  </div>
+  <div class="md:hidden hidden absolute top-full left-0 w-full glass border-t border-gray-800" id="mobile-menu">
+    <div class="flex flex-col p-6 space-y-4">
+      <a href="#home" class="text-gray-300 hover:text-white">Home</a>
+      <a href="#about" class="text-gray-300 hover:text-white">About</a>
+      <a href="#projects" class="text-gray-300 hover:text-white">Work</a>
+      <a href="#contact" class="text-primary font-medium">Contact Me</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+  <div class="container mx-auto px-6 z-10 grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6 reveal">
+      <div class="inline-block px-3 py-1 rounded-full border border-gray-700 bg-gray-900/50 text-xs font-mono text-accent">Open for internship opportunities</div>
+      <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">Turning Ideas into<br><span class="text-gradient">Real Products</span></h1>
+      <p class="text-lg text-gray-400 max-w-lg leading-relaxed">Informatics student at UNS. I start with the people behind a problem (a neighborhood seller, a special-school teacher, a community facing floods) and build software that fits their day, not the other way around.</p>
+      <div class="flex flex-wrap gap-4 pt-4">
+        <a href="#projects" class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors">View Work</a>
+        <a href="#contact" class="px-8 py-3 glass text-white font-semibold rounded-full hover:bg-white/10 transition-colors">Get In Touch</a>
+      </div>
+      <div class="flex items-center gap-6 pt-8 text-gray-500">
+        <a href="https://github.com/nayyaraazra" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-white transition-colors"><i class="fab fa-github text-xl"></i></a>
+        <a href="https://www.linkedin.com/in/nayyara-aqila-azra-570481326" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-blue-500 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+        <a href="mailto:nayyaraazra468@gmail.com" aria-label="Email" class="hover:text-primary transition-colors"><i class="fas fa-envelope text-xl"></i></a>
+      </div>
+    </div>
+    <div class="relative hidden md:block reveal delay-200" aria-hidden="true">
+      <div class="relative w-full aspect-square max-w-[500px] mx-auto">
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="glass-card absolute top-10 right-10 w-2/3 h-2/3 rounded-2xl z-20 p-6 flex flex-col justify-between animate-float">
+          <div class="flex justify-between items-start">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center"><i class="fas fa-code text-white text-sm"></i></div>
+            <i class="fas fa-ellipsis-h text-gray-500"></i>
+          </div>
+          <div class="space-y-3"><div class="h-2 w-3/4 bg-gray-700 rounded-full"></div><div class="h-2 w-1/2 bg-gray-700 rounded-full"></div><div class="h-2 w-full bg-gray-700 rounded-full"></div></div>
+          <div class="pt-4 border-t border-gray-700 text-xs font-mono text-green-400">● Live Preview</div>
+        </div>
+        <div class="glass-card absolute bottom-10 left-10 w-1/2 h-40 rounded-xl z-30 p-5 flex flex-col justify-center animate-float" style="animation-delay:-3s">
+          <div class="text-4xl font-bold text-white mb-1">Code + UX</div>
+          <div class="text-sm text-gray-400">Systems that work and feel right to use</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-24 relative">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About &amp; <span class="text-gradient">Skills</span></h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">What I build with, and how I work.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2 glass-card rounded-2xl p-8 reveal">
+        <h3 class="text-2xl font-bold text-white mb-4">Who I Am</h3>
+        <p class="text-gray-400 leading-relaxed mb-6">I’m an Informatics student at Sebelas Maret University who likes turning messy, real-world problems into software people can actually use. My work spans web apps (Laravel, Vue, React, Django), an Android app in Kotlin, graph-search experiments, and UX research for a competition-finalist app. I care about the logic behind a system and how it feels to use it.</p>
+        <p class="text-gray-400 leading-relaxed">When I’m not coding, you can find me reading a page-turner, travelling, or scheming on a new side quest.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 reveal flex flex-col justify-center">
+        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2"><i class="fas fa-layer-group text-secondary"></i> Frontend &amp; Design</h3>
+        <div class="flex flex-wrap gap-2" id="skills-front"></div>
+      </div>
+      <div class="glass-card rounded-2xl p-8 reveal flex flex-col justify-center">
+        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2"><i class="fas fa-server text-accent"></i> Backend &amp; Mobile</h3>
+        <div class="flex flex-wrap gap-2" id="skills-back"></div>
+      </div>
+      <div class="md:col-span-2 glass-card rounded-2xl p-8 reveal flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4 w-full md:w-auto"><div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400"><i class="fas fa-mobile-alt text-xl"></i></div><div><h4 class="text-white font-bold">Responsive</h4><p class="text-sm text-gray-500">Works on any device</p></div></div>
+        <div class="w-px h-12 bg-gray-800 hidden md:block"></div>
+        <div class="flex items-center gap-4 w-full md:w-auto"><div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400"><i class="fas fa-users text-xl"></i></div><div><h4 class="text-white font-bold">User-Tested</h4><p class="text-sm text-gray-500">3 usability test rounds</p></div></div>
+        <div class="w-px h-12 bg-gray-800 hidden md:block"></div>
+        <div class="flex items-center gap-4 w-full md:w-auto"><div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-400"><i class="fas fa-code-branch text-xl"></i></div><div><h4 class="text-white font-bold">Team Player</h4><p class="text-sm text-gray-500">Agile team of 4</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="py-24 bg-black/20">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-10 reveal">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Selected <span class="text-gradient">Work</span></h2>
+        <p class="text-gray-400">Web, mobile, AI, and UX projects, from course labs to competition work.</p>
+      </div>
+      <a href="https://github.com/nayyaraazra" target="_blank" rel="noopener" class="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors mt-4 md:mt-0">View GitHub <i class="fab fa-github"></i></a>
+    </div>
+    <div class="flex flex-wrap gap-2 mb-10" id="filters" role="group" aria-label="Filter projects"></div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid"></div>
+  </div>
+</section>
+
+<section id="contact" class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none"></div>
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="glass-card rounded-2xl max-w-4xl mx-auto p-8 md:p-12 border border-white/10 reveal">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6">Let’s build something <span class="text-gradient">together</span></h2>
+          <p class="text-gray-400 mb-8">Open to internships and collaborations in software engineering, frontend, and UX. The fastest way to reach me is email.</p>
+          <div class="space-y-4">
+            <a href="mailto:nayyaraazra468@gmail.com" class="flex items-center gap-4 text-gray-300 hover:text-white"><span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-primary"><i class="fas fa-envelope"></i></span>nayyaraazra468@gmail.com</a>
+            <div class="flex items-center gap-4 text-gray-300"><span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-secondary"><i class="fas fa-map-marker-alt"></i></span>Surakarta, Indonesia</div>
+          </div>
+        </div>
+        <form id="contact-form" class="space-y-4" novalidate>
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div><label for="name" class="block text-xs font-mono text-gray-500 mb-1">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" class="field" placeholder="Your name"></div>
+          <div><label for="email" class="block text-xs font-mono text-gray-500 mb-1">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" class="field" placeholder="you@example.com"></div>
+          <div><label for="message" class="block text-xs font-mono text-gray-500 mb-1">Message</label>
+            <textarea id="message" name="message" rows="4" required class="field" placeholder="Tell me about your project or opportunity..."></textarea></div>
+          <button type="submit" id="send-btn" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all disabled:opacity-60">Send Message</button>
+          <p id="form-status" class="text-sm min-h-[1.25rem]" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="py-8 border-t border-gray-900 bg-black text-center relative z-10">
+  <p class="text-gray-500 text-sm">© 2026 Nayyara Aqila Azra.</p>
+</footer>
+</body>
+</html>

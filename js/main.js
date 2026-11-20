@@ -15,7 +15,8 @@ const demo = (href, title = 'Live demo') => ({ href, title, icon: 'fas fa-extern
 const PROJECTS = [
   { cat: 'web', label: 'Full-Stack · Marketplace', title: 'Kulaan.id', icon: 'fa-store', grad: 'from-indigo-900 to-purple-900',
     desc: 'Catalog platform for local UMKM sellers and buyers, with order management and two-step seller verification.',
-    tags: ['Laravel', 'Vue.js', 'MySQL'], links: [] },
+    tags: ['Laravel', 'Vue.js', 'MySQL'], 
+    links: [gh('https://github.com/nayyaraazra/praktikum-rpl-A-7', 'View code')] },
   { cat: 'web', label: 'Algorithm Visualizer', title: 'Flood Logistic Route System', icon: 'fa-route', grad: 'from-sky-900 to-indigo-900',
     desc: 'Computes flood-emergency logistics routes with algorithmic search and live Open-Meteo weather data.',
     tags: ['React', 'JavaScript', 'Tailwind'],

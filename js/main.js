@@ -47,16 +47,19 @@ const PROJECTS = [
   { cat: 'web', label: 'Full-Stack · Coursework', title: 'CS50W Django Apps', icon: 'fa-layer-group', grad: 'from-green-900 to-teal-900',
     desc: 'Commerce, Network, and Mail: three Django and JavaScript apps built through CS50W coursework.',
     tags: ['Django', 'JavaScript', 'SQLite'],
-    links: [gh('https://github.com/nayyaraazra/Commerce', 'Commerce code'), gh('https://github.com/nayyaraazra/Social-Network-App', 'Network code'), gh('https://github.com/nayyaraazra/Mail', 'Mail code')] },
-  { cat: 'mobile', label: 'Android App', title: 'TechStack ID', icon: 'fa-mobile-alt', grad: 'from-blue-900 to-cyan-900',
-    desc: 'Android app from a mobile development lab, with bottom navigation, ViewModel, LazyColumn lists, and search/filter.',
-    tags: ['Kotlin', 'Jetpack Compose', 'MVVM'], links: [] },
-  { cat: 'web', label: 'Web App', title: 'MISSION CTRL', icon: 'fa-rocket', grad: 'from-slate-800 to-indigo-900',
-    desc: 'Space mission planner that pulls NASA data and handles scheduling across WIB and Eastern Time.',
-    tags: ['JavaScript', 'REST API', 'NASA APOD'], links: [] },
+    links: [gh('https://github.com/nayyaraazra/Commerce', 'Commerce code'), gh('https://github.com/nayyaraazra/Social-Network-App', 'Network code'), gh('https://github.com/nayyaraazra/Mail', 'Mail code')],
+    image: 'images/cs50w.png', alt: 'CS50W Django apps: Commerce, Network, and Mail' },
+  { cat: 'mobile', label: 'Android · UI Slicing', title: 'Smart Home UI', icon: 'fa-lightbulb', grad: 'from-yellow-900 to-amber-900',
+    desc: 'Jetpack Compose build of a smart-home app design: onboarding, device picker, and an interactive dashboard.',
+    tags: ['Kotlin', 'Jetpack Compose', 'Material 3'], links: [],
+    image: 'images/smarthome.png', alt: 'Smart Home app dashboard with device controls and status' },
+  // { cat: 'web', label: 'Web App', title: 'MISSION CTRL', icon: 'fa-rocket', grad: 'from-slate-800 to-indigo-900',
+  //   desc: 'Space mission planner that pulls NASA data and handles scheduling across WIB and Eastern Time.',
+  //   tags: ['JavaScript', 'REST API', 'NASA APOD'], links: [] },
   { cat: 'web', label: 'Web App', title: 'Mood-Based Playlist Generator', icon: 'fa-music', grad: 'from-fuchsia-900 to-pink-900',
     desc: 'Web app that turns your current mood into a generated playlist.',
-    tags: ['JavaScript', 'HTML', 'CSS'], links: [] }
+    tags: ['JavaScript', 'HTML', 'CSS'], links: [],
+    image: 'images/moodplaylist.png', alt:'Mood-Based Playlist Generator' }
 ];
 
 /* ===== Skills, filters, project cards ===== */

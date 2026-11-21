@@ -2,7 +2,7 @@
 // Contact form: create a free form at formspree.io (send to your email), then paste its URL here,
 // e.g. 'https://formspree.io/f/abcdwxyz'. While empty, the form opens the visitor's email app instead.
 const FORM_ENDPOINT = '';
-const TO_EMAIL = 'nayyaraazra468@gmail.com';
+const TO_EMAIL = 'nayyaraazr@gmail.com';
 
 const SKILLS_FRONT = ['React', 'Vue.js', 'Tailwind CSS', 'JavaScript', 'HTML/CSS', 'Figma'];
 const SKILLS_BACK = ['Laravel', 'Django', 'MySQL', 'Python', 'Kotlin', 'Jetpack Compose'];

@@ -3,9 +3,8 @@
   const canvas = document.getElementById('bg-canvas');
   if (!canvas || !canvas.getContext) return;
   const ctx = canvas.getContext('2d');
-  // // With "reduce motion" enabled in the OS, stars are drawn once and stay still.
-  // const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const still = false;
+  // With "reduce motion" enabled in the OS, stars are drawn once and stay still.
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mouse = { x: null, y: null, r: 0 };
   let w, h, stars = [], raf, resizeT;
 

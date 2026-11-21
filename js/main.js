@@ -12,30 +12,38 @@ const gh = (href, title) => ({ href, title, icon: 'fab fa-github' });
 const demo = (href, title = 'Live demo') => ({ href, title, icon: 'fas fa-external-link-alt' });
 
 // Add or edit projects here. Leave links empty ([]) until a repo or demo is ready.
+// Optional screenshot per project: add  image: 'images/floodroute.webp', alt: 'Route map with flood zones'
+// (1200x600, WebP or JPG, under 150 KB). Without "image", the card shows its icon.
 const PROJECTS = [
   { cat: 'web', label: 'Full-Stack · Marketplace', title: 'Kulaan.id', icon: 'fa-store', grad: 'from-indigo-900 to-purple-900',
     desc: 'Catalog platform for local UMKM sellers and buyers, with order management and two-step seller verification.',
     tags: ['Laravel', 'Vue.js', 'MySQL'], 
-    links: [gh('https://github.com/nayyaraazra/praktikum-rpl-A-7', 'View code')] },
-  { cat: 'web', label: 'Algorithm Visualizer', title: 'Flood Logistic Route System', icon: 'fa-route', grad: 'from-sky-900 to-indigo-900',
+    links: [gh('https://github.com/nayyaraazra/praktikum-rpl-A-7', 'View code')],
+    image: 'images/kulaan.png', alt: 'Kulaan.id homepage with product cards and search bar' },
+  { cat: 'web', label: 'Algorithm Visualizer', title: 'Flood Logistic Routes System', icon: 'fa-route', grad: 'from-sky-900 to-indigo-900',
     desc: 'Computes flood-emergency logistics routes with algorithmic search and live Open-Meteo weather data.',
     tags: ['React', 'JavaScript', 'Tailwind'],
-    links: [gh('https://github.com/nayyaraazra/flood-logistics-optimization-app', 'View code'), demo('https://flood-logistics-optimization-app.vercel.app/')] },
+    links: [gh('https://github.com/nayyaraazra/flood-logistics-optimization-app', 'View code'), demo('https://flood-logistics-optimization-app.vercel.app/')],
+    image: 'images/floodroute.png', alt: 'Route map with flood zones' },
   { cat: 'ux', label: 'UX Design · Competition', title: 'SarehAsih', icon: 'fa-universal-access', grad: 'from-pink-900 to-rose-900',
     desc: 'Mobile app concept connecting special-school teachers and parents. GEMASTIK XIX 2026 Finalist (Top 20).',
-    tags: ['Figma', 'UX Research', 'Usability Testing'], links: [], note: 'Private project · details on request' },
+    tags: ['Figma', 'UX Research', 'Usability Testing'], links: [], note: 'Private project · details on request',
+    image: 'images/sarehasih.png', alt: 'SarehAsih app screens with teacher and parent dashboards' },
   { cat: 'ai', label: 'AI · Graph Search', title: 'MBDA*', icon: 'fa-project-diagram', grad: 'from-violet-900 to-fuchsia-900',
     desc: 'Modified Bidirectional A* that guides users out of political filter bubbles through bridge accounts.',
     tags: ['Python', 'NetworkX', 'Streamlit'],
-    links: [gh('https://github.com/searchylia/Kecerdasan-Buatan-MBDA-Mitigate-Filter-Bubble', 'View code')] },
+    links: [gh('https://github.com/searchylia/Kecerdasan-Buatan-MBDA-Mitigate-Filter-Bubble', 'View code')],
+    image: 'images/mbda.png', alt: 'MBDA graph search visualization with nodes and edges' },
   { cat: 'web', label: 'City Guide App', title: 'SoloInfo', icon: 'fa-map-marked-alt', grad: 'from-teal-900 to-emerald-900',
     desc: 'Local discovery site for Solo’s food, destinations, and events, with search, category filters, and sorting.',
     tags: ['HTML', 'CSS', 'JavaScript'],
-    links: [gh('https://github.com/nayyaraazra/nayyaraazra.github.io', 'View code'), demo('https://nayyaraazra.github.io/')] },
+    links: [gh('https://github.com/nayyaraazra/nayyaraazra.github.io', 'View code'), demo('https://nayyaraazra.github.io/')], 
+    image: 'images/soloinfo.png', alt: 'SoloInfo homepage with search bar and category cards' },
   { cat: 'desktop', label: 'EdTech · Desktop', title: 'StudyQuest', icon: 'fa-graduation-cap', grad: 'from-amber-900 to-orange-900',
     desc: 'Gamified study planner with prioritized scheduling, progress tracking, and clean MVC architecture.',
     tags: ['Java', 'JavaFX', 'SQLite'],
-    links: [gh('https://github.com/nayyaraazra/PBO-Project-SmartStudentPlanner', 'View code')] },
+    links: [gh('https://github.com/nayyaraazra/PBO-Project-SmartStudentPlanner', 'View code')],
+    image: 'images/studyquest.png', alt: 'StudyQuest dashboard with task list and progress chart' },
   { cat: 'web', label: 'Full-Stack · Coursework', title: 'CS50W Django Apps', icon: 'fa-layer-group', grad: 'from-green-900 to-teal-900',
     desc: 'Commerce, Network, and Mail: three Django and JavaScript apps built through CS50W coursework.',
     tags: ['Django', 'JavaScript', 'SQLite'],
@@ -59,7 +67,7 @@ document.getElementById('skills-back').innerHTML = SKILLS_BACK.map(chip).join(''
 const card = p => `
 <article class="glass-card rounded-xl overflow-hidden group reveal" data-cat="${p.cat}">
   <div class="h-48 bg-gray-800 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br ${p.grad} group-hover:scale-110 transition-transform duration-500 flex items-center justify-center"><i class="fas ${p.icon} text-5xl text-white/20"></i></div>
+    <div class="absolute inset-0 bg-gradient-to-br ${p.grad} group-hover:scale-110 transition-transform duration-500 flex items-center justify-center"><i class="fas ${p.icon} text-5xl text-white/20"></i>${p.image ? `<img src="${p.image}" alt="${p.alt || p.title + ' screenshot'}" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover">` : ''}</div>
     ${p.links.length ? `<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity flex items-center justify-center gap-4">
       ${p.links.map(l => `<a href="${l.href}" target="_blank" rel="noopener" title="${l.title}" aria-label="${p.title}: ${l.title}" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><i class="${l.icon}"></i></a>`).join('')}</div>` : ''}
   </div>
